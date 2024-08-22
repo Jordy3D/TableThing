@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Table Generator</title>
+
+    <!-- import style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- set favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+
+    <!-- import modules -->
+    <script src="modules/csv-js.js"></script>
+    <!-- import scripts -->
+    <script defer src="js/table.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <div id="left">
+            <span class="side-header">
+                INPUTS
+            </span>
+            <div class="inputs">
+                <div class="input-section">
+
+                    <h2>Table Input</h2>
+                    <h3>Controls</h3>
+                    <!-- a table input that can add columns and rows -->
+                    <div class="table-controls">
+                        <!-- buttons to add or remove cells and rows -->
+                        <button id="remove-row">Row -</button>
+                        <button id="add-row">Row +</button>
+                        <button id="remove-col">Col -</button>
+                        <button id="add-col">Col +</button>
+                        <!-- buttons to clear the table's data and reset to default -->
+                        <button id="clear">Clear</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                    <div id="smart-table"></div>
+                </div>
+
+                <div class="input-section">
+                    <h2>CSV Input/Output</h2>
+                    <p>
+                        You can write basic CSV data here, and it will be read into the table. It will also update as you change the table.
+                    </p>
+                    <div id="csv">
+                        <textarea name="csvInput" id="csvInput"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="right">
+            <span class="side-header">
+                OUTPUTS
+            </span>
+            <div class="output-section" id="box-table-output">
+                <div class="outputhead">
+                    <h2>Box Table Output</h2>
+                    <button id="copy">Copy</button>
+                </div>
+
+                <div class="style-controls">
+                    <!-- selector for which style to use -->
+                    <div class="input-group">
+                        <label for="styleSelect">Style</label>
+                        <select name="styleSelect" id="styleSelect"></select>
+                    </div>
+                    <!-- toggles for whether or not to draw the top, crosses, and bottom -->
+                    <div class="input-group">
+                        <label for="top">Top</label>
+                        <input type="checkbox" id="top" />
+                    </div>
+                    <div class="input-group">
+                        <label for="cross">Cross</label>
+                        <input type="checkbox" id="cross" />
+                    </div>
+                    <div class="input-group">
+                        <label for="bottom">Bottom</label>
+                        <input type="checkbox" id="bottom" />
+                    </div>
+                </div>
+                <pre id="box-table"></pre>
+            </div>
+            <div class="output-section" id="markdown-output">
+                <div class="outputhead markdown-output">
+                    <h2>Markdown Output</h2>
+                    <button id="copy-markdown">Copy</button>
+                </div>
+
+                <div class="style-controls">
+                    <!-- toggle for whether it should be prettified -->
+                    <div class="input-group">
+                        <label for="prettify">Prettify</label>
+                        <input type="checkbox" id="prettify" checked />
+                    </div>
+                </div>
+                <pre id="markdown-table"></pre>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
